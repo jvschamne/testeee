@@ -1,0 +1,12 @@
+[
+    ["#r1", "Churrassic Park", [
+        ["#opcao1", "Personalizar marmita", 17.00, "Monte sua marmita", "../Dashboard/marmitas/m1.jpg"],
+        ["#opcao2", "Opção 1", 17.00, "Arroz, feijão, bife, batata frita e legumes cozidos;", "../Dashboard/marmitas/m1.jpg"],
+        ["#opcao3", "Opção 2", 21.00, "Frango, batata doce, macarrão, arroz e brócolis;", "../Dashboard/marmitas/m1.jpg"]
+    ]],
+    ["#r2", "Dougras Lanches", [
+        ["#opcao4", "Personalizar marmita", 17.00, "Monte sua marmita", "../Dashboard/marmitas/m1.jpg"],
+        ["#opcao5", "Opção 1", 17.00, "Arroz, feijão, bife, batata frita e legumes cozidos;", "../Dashboard/marmitas/m1.jpg"],
+        ["#opcao6", "Opção 2", 21.00, "Frango, batata doce, macarrão, arroz e brócolis;", "../Dashboard/marmitas/m1.jpg"]
+    ]]
+]

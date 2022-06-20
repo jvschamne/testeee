@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MarmiCraft</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../LandingPage/style.css'>
+    <link rel="shortcut icon" href="../LandingPage/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body>
+    <div id="navbar" class="navegation-bar">
+        <nav id="nav-items">
+            <a class="item-navbar" onclick="login()">Fazer Login</a>
+            <a class="item-navbar-signup" onclick="login()">Cadastre-se</a>
+        </nav>
+    </div>
+    <div id="container1" class="container1">
+        <div id="main-text">
+            <h1 id="headline">
+                MarmiCraft
+            </h1>
+            <p id="subheadline">Sua marmita do seu jeito</p>
+            <div id="divbotao">
+                <button id="botao" onclick="login()">Fazer Login</button>
+            </div>
+        </div>
+        <img id="laptop" src="../LandingPage/marmita.png" height="30%" width="30%">
+
+    </div>
+    <div id="login-popup" class="popup hidden">
+        <a id="close">
+            <i class="fas fa-times"></i>
+        </a>
+
+        <h1 id="login-text">Faça o seu Login:</h1>
+        <form action="">
+            <div class="campo">
+                <input id="e-mail" type="email" placeholder="e-mail">
+                <span class="input-border"></span>
+            </div>
+            <div class="campo">
+                <input id="senha" type="password" placeholder="senha">
+                <span class="input-border"></span>
+            </div>
+        </form>
+        <button id="botao2">Entrar</button>
+        <h3 id="cadastro-text">Não tem cadastro ainda? Faça o seu agora mesmo</h2>
+            <button id="botao3">Cadastrar</button>
+    </div>
+
+</body>
+<script src='../LandingPage/main.js'></script>
+
+</html>

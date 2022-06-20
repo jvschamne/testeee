@@ -1,0 +1,295 @@
+create table usuario(
+email varchar(50) not null,
+senha varchar(30) not null,
+PRIMARY KEY (email)
+);
+create table restaurantes(
+nome varchar(60),
+distancia INT,
+PRIMARY KEY (nome)
+);
+create table alimentos(
+id_alimento int,
+restaurante varchar(60),
+preco float,
+nomeAlimento char(30),
+PRIMARY KEY(id_alimento),
+FOREIGN KEY (restaurante) REFERENCES restaurantes(nome)	
+);
+create table usuarioInfo(
+usuario varchar(50),
+nome varchar(60),
+endereco char(60),
+cidade char(20),
+telefone char(10),
+complemento boolean,
+dataNascimento char(8),
+ FOREIGN KEY (usuario) REFERENCES usuario (email)
+);
+
+create table marmitasSalvas(
+usuario varchar(50),
+id_marmitaSalva int,
+restaurante varchar(60),
+PRIMARY KEY( id_marmitaSalva),
+FOREIGN KEY (restaurante) REFERENCES restaurantes(nome)	,
+FOREIGN KEY (usuario) REFERENCES usuario (email)
+);
+create table alimentosMarmitaSalvas(
+quantidade int,
+id_marmitaSalva int,
+id_alimentos int,
+FOREIGN KEY (id_alimentos) REFERENCES alimentos(id_alimento),
+FOREIGN KEY (id_marmitaSalva) REFERENCES marmitasSalvas(id_marmitaSalva)	
+);
+
+
+create table marmitasProntas(
+id_marmitaPronta int,
+restaurante varchar(60),
+conteudo varchar(300),
+preco float,
+PRIMARY KEY (id_marmitaPronta),
+FOREIGN KEY (restaurante) REFERENCES restaurantes(nome)	
+);
+
+
+
+insert into usuario(email, senha) values('abc', '123');
+insert into 
+usuarioInfo(usuario, nome, endereco, cidade, telefone, complemento, dataNascimento ) 
+ values('abc', 'fulano','rua yyyyy', 'curitiba','88888888','1','15082000');
+insert into 
+restaurantes(nome, distancia) 
+ values('Churrasic Park', '2400');
+insert into 
+restaurantes(nome, distancia) 
+ values('Geraldo Foods', '5000');
+insert into 
+restaurantes(nome, distancia) 
+ values('Marmitaria', '4100');
+insert into 
+restaurantes(nome, distancia) 
+ values('Dougras Lanches', '4300');
+insert into 
+restaurantes(nome, distancia) 
+ values('Marmitex do Cleisson', '4600');
+insert into 
+restaurantes(nome, distancia) 
+ values('Crazy Dogs', '1300');
+insert into 
+MarmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '1','Churrasic Park', 'arroz,feijao,bife,batata frita,legumes cozidos;', '18.90');
+insert into 
+MarmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '2','Churrasic Park', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '3','Geraldo Foods', 'arroz,feijao,bife,batata frita e legumes cozidos;', '18.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '4','Geraldo Foods', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '5','Marmitaria', 'arroz,feijao,bife,batata frita e legumes cozidos;', '18.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '6','Marmitaria', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '7','Dougras Lanches', 'arroz,feijao,bife,batata frita e legumes cozidos;', '18.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '8','Dougras Lanches', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '9','Marmitex do Cleisson', 'arroz,feijao,bife,batata frita e legumes cozidos;', '18.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '10','Marmitex do Cleisson', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '11','Crazy Dogs', 'arroz,feijao,bife,batata frita e legumes cozidos;', '18.90');
+insert into 
+marmitasProntas(id_marmitaPronta, restaurante, conteudo, preco) 
+ values( '12','Crazy Dogs', 'frango,batata doce,macarrao,arroz,brocolis;', '15.90');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '1','Churrasic Park', '4', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '2','Churrasic Park', '4', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '3','Churrasic Park', '3', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '4','Churrasic Park', '2', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '5','Churrasic Park', '2', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '6','Churrasic Park', '2', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '7','Churrasic Park', '3', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '8','Churrasic Park', '3', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '9','Churrasic Park', '3', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '10','Churrasic Park', '3', 'ovo frito');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '11','Geraldo Foods', '5', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '12','Geraldo Foods', '5', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '13','Geraldo Foods', '2', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '14','Geraldo Foods', '2', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '15','Geraldo Foods', '2', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '16','Geraldo Foods', '2', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '17','Geraldo Foods', '3', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '18','Geraldo Foods', '3', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '19','Geraldo Foods', '3', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '20','Geraldo Foods', '3', 'ovo frito');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '21','Marmitaria', '5', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '22','Marmitaria', '5', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '23','Marmitaria', '3', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '24','Marmitaria', '1', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '25','Marmitaria', '3', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '26','Marmitaria', '3', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '27','Marmitaria', '3', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '28','Marmitaria', '3', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '29','Marmitaria', '2', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '30','Marmitaria', '2', 'ovo frito');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '31','Dougras Lanches', '1', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '32','Dougras Lanches', '10', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '33','Dougras Lanches', '1', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '34','Dougras Lanches', '1', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '35','Dougras Lanches', '1', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '36','Marmitaria', '1', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '37','Dougras Lanches', '1', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '38','Dougras Lanches', '1', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '39','Dougras Lanches', '1', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '40','Dougras Lanches', '1', 'ovo frito');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '41','Marmitex do Cleisson', '10', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '42','Marmitex do Cleisson', '10', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '43','Marmitex do Cleisson', '10', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '44','Marmitex do Cleisson', '10', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '45','Marmitex do Cleisson', '10', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '46','Marmitex do Cleisson', '10', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '47','Marmitex do Cleisson', '10', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '48','Marmitex do Cleisson', '10', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '49','Marmitex do Cleisson', '10', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '50','Marmitex do Cleisson', '10', 'ovo frito');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '51','Crazy Dogs', '3', 'frango');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '52','Crazy Dogs', '3', 'bife');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '53','Crazy Dogs', '3', 'batata frita');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '54','Crazy Dogs', '3', 'arroz');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '55','Crazy Dogs', '3', 'legumes cozidos');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '56','Crazy Dogs', '3', 'brocolis');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '57','Marmitex do Cleisson', '3', 'batata doce');
+insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '58','Crazy Dogs', '3', 'macarrao');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '59','Crazy Dogs', '3', 'polenta frita');
+ insert into 
+alimentos(id_alimento, restaurante, preco, nomeAlimento) 
+ values( '60','Crazy Dogs', '3', 'ovo frito');

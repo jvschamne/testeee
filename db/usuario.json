@@ -1,0 +1,6 @@
+{
+    "usuario": {
+        "email": ["joao@hotmail.com", "douglas@gmail.com"],
+        "senha": ["12345678", "24242424"]
+    }
+}

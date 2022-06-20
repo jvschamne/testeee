@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="../Dashboard/icon.png" type="image/x-icon">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='../Dashboard/style.css'>
+    <title>Marmicraft</title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="sidebar">
+        <div class="logo hidden">
+            <a href="#" class="nav_logo">Marmicraft </a>
+        </div>
+        <i class="fas fa-bars reduzido" id="btn"></i>
+        <div class="nav_menu" id="nav_menu">
+            <ul class="nav_list_grid hidden">
+                <li class="nav_item">
+                    <a href="#restaurantes" class="nav_link">
+                        <i class="fas fa-home"></i> Restaurantes
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#meusPedidos" class="nav_link">
+                        <i class="fas fa-shopping-cart"></i>Carrinho
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#meusDados" class="nav_link">
+                        <i class="fas fa-user"></i>Meus dados
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a onclick="logOut()">
+                        <i class="fas fa-arrow-alt-circle-left"></i>Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!--MAIN-->
+    <div class="container">
+        <div id="#restaurantes" class="">
+            <h1 class="titulo">Restaurantes Disponíveis na sua região</h1> <br>
+            <main id="cardsRestaurantes" class="cards">
+                <!---
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/churrasic.jpg" alt="">
+                    </div>
+                    <h3>Churrassic Park</h3>
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>2,4km
+                        <i class="fas fa-star"></i>4,3
+                    </a>
+                    <a href="#r1" class="button">Acessar restaurante</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/Food_PNG.png" alt="">
+                    </div>
+                    <h3>Geraldo Foods</h3>
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>5km
+                        <i class="fas fa-star"></i>4,8
+                    </a>
+                    <a href="#r2" class="button">Acessar restaurante</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/marmitaria.png" alt="">
+                    </div>
+                    <h3>Marmitaria</h3>
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>4,1km
+                        <i class="fas fa-star"></i>4,2
+                    </a>
+                    <a href="#r3" class="button">Acessar restaurante</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/restaurante.jpg" alt="">
+                    </div>
+                    <h3>Dougras Lanches</h3>
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>4,3km
+                        <i class="fas fa-star"></i>4,9
+                    </a>
+                    <a href="#r4" class="button">Acessar restaurante</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/marmitex.png" alt="">
+                    </div>
+                    <h3>Marmitex do Cleisson</h3>
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>4,6km
+                        <i class="fas fa-star"></i>3,7
+                    </a>
+                    <a href="#r5" class="button">Acessar restaurante</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/crazydogs.png" alt="">
+                    </div>
+                    <h3>Crazy Dogs</h3>
+
+                    <a class="descricao">
+                        <i class="fas fa-map-marker-alt"></i>1,3km
+                        <i class="fas fa-star"></i>4,4
+                    </a>
+
+                    <a href="#r6" class="button">Acessar restaurante</a>
+                </section>
+            -->
+            </main>
+
+        </div>
+        <div id="#meusPedidos" class="esconde">
+            <section id="carrinho" class="carrinho">
+                <h1 class="titulo">Carrinho</h1>
+                <!---
+                <div id class="campo">
+                    <h3>Seu pedido está sendo preparado:</h3>
+                    <p>Nome do pedido</p>
+                    <p>Descrição do pedido</p>
+                    <p>preço do pedido</p>
+
+                 </div>-->
+            </section>
+        </div>
+        <div id="#meusDados" class="esconde">
+            <section class="dados">
+                <h1 class="titulo">Dados da Conta</h1>
+                <form action="">
+                    <div class="campo">
+                        <h3>Nome</h3>
+                        <input id="nome" type="text" placeholder="Nome">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="campo">
+                        <h3>Nascimento</h3>
+                        <input id="nascimento" type="date" placeholder="Nascimento">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="telefone">
+                        <h3>Telefone</h3>
+                        <input id="telefone" type="tel" placeholder="Telefone">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="campo">
+                        <h3>Cidade</h3>
+                        <input id="cidade" type="number" placeholder="Cidade">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="campo">
+                        <h3>CEP</h3>
+                        <input id="cep" type="number" placeholder="CEP">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="campo">
+                        <h3>Endereço</h3>
+                        <input id="cep" type="text" placeholder="Endereço">
+                        <span class="input-border"></span>
+                    </div>
+                    <div class="campo">
+                        <h3>Apartamento ou casa</h3>
+                        <select id="moradia">
+                            <option value="volvo">Apartamento</option>
+                            <option value="saab">Casa</option>
+                        </select>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+        <div id="#sair" class="esconde">
+        </div>
+    </div>
+
+    <!--INFO DO RESTAURANTE-->
+    <div class="container" id="container-restaurantes">
+        <!--<div id="#r1" class="esconde">
+            <h1 class="titulo">Churrassic Park</h1>
+            <br>
+            <span class="info-restaurante">
+                <span>
+                    <i class="fas fa-map-marker-alt"></i>2,4km
+                </span>
+            <span>
+                    <i class="fas fa-star"></i>4,3
+                </span>
+            <span style="color: rgb(0, 156, 0);">
+                    Aberto Agora
+                </span>
+            </span>
+
+            <!--OPCOES DE MARMITA-->
+        <!---
+            <main class="cards">
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/marmitas/m1.jpg" alt="">
+                    </div>
+                    <h3>Personalizar Marmita</h3>
+                    <a class="descricao">
+                        <span class="descricao-pedido">Monte sua marmita do jeito que você preferir!</span>
+                        <br>
+                        <span class="preco">A partir de R$7,90 </span>
+                    </a>
+                    <a href="#opcao1" class="button">Montar marmita</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/marmitas/m2.jpeg" alt="">
+                    </div>
+                    <h3>Opção 1</h3>
+                    <a class="descricao">
+                        <span class="descricao-pedido">Arroz, feijão, bife, batata frita e legumes cozidos;</span>
+                        <br>
+                        <span class="preco">R$18,90 </span>
+                    </a>
+                    <a href="#opcao2" class="button">Adicionar ao carrinho</a>
+                </section>
+                <section class="card">
+                    <div class="icon">
+                        <img src="../Dashboard/marmitas/m3.jpg" alt="">
+                    </div>
+                    <h3>Opção 2</h3>
+                    <a class="descricao">
+                        <span class="descricao-pedido">Frango, batata doce, macarrão, arroz e brócolis;</span>
+                        <br>
+                        <span class="preco">R$15,90 </span>
+                    </a>
+                    <a href="#opcao3" class="button">Adicionar ao carrinho</a>
+                </section>
+            </main>
+        </div>-->
+
+    </div>
+
+    </div>
+
+    <!--MONTAR MARMITA-->
+    <div class="container">
+        <section id="personalizar" class="personalizar esconde">
+            <div class="div-personaliza ">
+                <h1 class="titulo ">Personalizar Marmita</h1>
+                <form action=" ">
+                    <div class="select ">
+                        <select name="opcoes " class="opcoes-personalizadao ">
+                            <option value="Frango,5 ">Frango</option>
+                            <option value="Bife,6 ">Bife</option>
+                            <option value="Batata frita, 4 ">Batata frita</option>
+                            <option value="Arroz, 3 ">Arroz</option>
+                            <option value="Legumes cozido, 3 ">Legumes cozidos</option>
+                            <option value="Brócolis, 3 ">Brócolis</option>
+                            <option value="Batata doce, 3 ">Batata doce</option>
+                            <option value="Macarrão, 5 ">Macarrão</option>
+                            <option value="Polenta frita, 5 ">Polenta frita</option>
+                            <option value="Ovo frito, 4 ">Ovo frito</option>
+                        </select>
+                        <button type="button" class="add-button " onclick="addTodo() ">
+                            <i class="fas fa-plus-square "></i>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="campo ">
+                    <h3>Alimentos:</h3>
+                    <div class="pedidos-containter ">
+
+                        <ul class="pedidos-list "></ul>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="centraliza ">
+                        <button class="botao-checkout " onclick="pedidoPersonalizado() ">Adicionar ao Carrinho</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+
+    <!--CHECKOUT PARA FINALIZAR PEDIDO-->
+    <div class="container ">
+        <section id="checkout" class="checkout esconde ">
+
+            <h1 class="titulo ">Checkout</h1>
+            <form action=" ">
+
+                <div class="campo ">
+                    <h3>Endereço</h3>
+                    <input id="endereco " type="text " placeholder=" ">
+                    <span class="input-border "></span>
+                </div>
+
+                <div class="campo ">
+                    <h3>Apartamento ou casa</h3>
+                    <select id="moradia ">
+                        <option value="volvo ">Apartamento</option>
+                        <option value="saab ">Casa</option>
+                    </select>
+                </div>
+
+                <div class="campo ">
+                    <h3>Cartão de Crédito</h3>
+                    <input id="endereco " type="text " placeholder="Nome do cartão ">
+                    <span class="input-border "></span>
+                    <input id="endereco " type="number " placeholder="Número do cartão ">
+                    <span class="input-border "></span>
+                    <input id="endereco " type="number " placeholder="Data de vencimento ">
+                    <span class="input-border "></span>
+                    <input id="endereco " type="number " placeholder="CVC ">
+                    <span class="input-border "></span>
+                </div>
+            </form>
+            <div class="campo ">
+                <div class="revisao-pedido ">
+
+                    <h3>Pedido</h3>
+                    <span class="descricao-pedido-checkout ">
+            
+                </span>
+                    <br>
+                    <br>
+                    <h3>Total a pagar:</h3>
+                    <span class="preco-pedido-checkout ">
+                
+                </span>
+                </div>
+                <div class="centraliza ">
+                    <button class="botao-checkout " onclick="fazCompra() ">Fazer pedido</button>
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+    <div id="popupPedido" class="hidden">
+        <a id="close" class="close">
+            <i class="fas fa-times"></i>
+        </a>
+
+        <h1 id="login-text">Seu pedido foi adicionado ao carrinho!</h1>
+    </div>
+    </div>
+    <div id="popupCompra" class="hidden">
+        <a id="close" class="close">
+            <i class="fas fa-times"></i>
+        </a>
+
+        <h1 id="login-text">Sua compra foi realizada!</h1>
+    </div>
+    <!--MAIN JS-->
+    <script src='../Dashboard/main.js'></script>
+</body>
+
+</html>

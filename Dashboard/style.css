@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.cards {
+    display: flex;
+    flex-flow: wrap;
+    max-width: 1200px;
+    padding: 32px;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    height: 400px;
+    width: 315px;
+    /*margin-left: 32px;*/
+    margin: 10px;
+    box-shadow: 15px 15px 50px -30px #fcc40d;
+}
+
+main.cards section.card:hover {
+    transition: all 0.5s ease;
+    animation: reverse 2s;
+    transform: scale(1.05);
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card .icon {
+    width: 164px;
+    height: 164px;
+}
+
+main.cards section.card img {
+    width: 100%;
+}
+
+main.cards section.card h3 {
+    font-size: 1.5rem;
+    margin: 16px 0;
+}
+
+main.cards section.card .descricao {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+}
+
+.pedido-button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ffd900 0, #ffa000 25%, #ff8a0a 50%, #f17418 75%, #e56121 100%);
+    text-decoration: none;
+    color: #11101d;
+}
+
+main.cards section.card a.button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ffd900 0, #ffa000 25%, #ff8a0a 50%, #f17418 75%, #e56121 100%);
+    text-decoration: none;
+    color: #11101d;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px;
+    background: #11101d;
+    padding: 6px 14px;
+    transition: all 0.7s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+    transition: all 0.7s ease;
+}
+
+.nav_menu .nav_item {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    transition: all 1.7s ease;
+}
+
+.sidebar .nav_item {
+    text-decoration: none;
+    color: #fcc40d;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav_item a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+.nav_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #11101d;
+    padding: 6px 14px;
+}
+
+.sidebar #btn {
+    color: #fff;
+    position: absolute;
+    left: 90%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+li {
+    display: inline-block;
+}
+
+.nav_item a {
+    color: #fcc40d;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav_item li {
+    display: inline-block;
+}
+
+.nav_logo {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 400;
+    cursor: default;
+}
+
+.transicao {
+    transition: all 1.5s ease;
+}
+
+.sidebar .nav_logo {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.sidebar .nav_item {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.fas,
+.fab {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.fa-star {
+    color: #fcc40d;
+}
+
+.fa-map-marker-alt {
+    color: red;
+}
+
+.reduzido {
+    left: 50% !important;
+}
+
+.hidden {
+    display: none;
+    transition: all 1.7s ease;
+}
+
+.esconde {
+    display: none;
+}
+
+.titulo {
+    font-size: 2rem;
+    color: black;
+}
+
+.container {
+    margin-top: 2rem;
+    transition: all 0.7s ease;
+}
+
+.vaiPraDireita {
+    margin-left: 16rem;
+    transition: all 0.7s ease;
+}
+
+h1 {
+    margin-left: 2.1vw;
+}
+
+.preco,
+.preco-pedido-checkout {
+    color: rgb(0, 156, 0);
+}
+
+.descricao-pedido,
+.descricao-pedido-checkout {
+    font-family: Verdana, sans-serif;
+    color: gray;
+}
+
+.dados .campo {
+    margin-bottom: 5vh;
+}
+
+
+/*Tela quando um restaurante eh selecionado*/
+
+.tela-restaurante {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
+
+.checkout .campo {
+    position: relative;
+    max-width: 60vw;
+    padding: 1rem;
+    margin-right: 5vw;
+    margin-top: 1vh;
+}
+
+.campo input {
+    margin-right: 1vw;
+    width: 20vw;
+    font-size: 1rem;
+    margin-top: 1vh;
+}
+
+.dados {
+    background: white;
+    box-shadow: 15px 15px 50px -30px #fcc40d;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.dados form {
+    margin-top: 5vh;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 70vw;
+}
+
+.dados form .campo {
+    margin-right: 5vw;
+}
+
+
+/*Tela do Checkout*/
+
+.checkout,
+.personalizar {
+    background: white;
+    box-shadow: 15px 15px 50px -30px #fcc40d;
+    padding: 3rem;
+    border-radius: 8px;
+    /*
+    justify-content: center;    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    height: 400px;
+    width: 315px;
+    margin-left: 32px;
+    margin: 10px;
+    box-shadow: 15px 15px 50px -30px #fcc40d;/*/
+}
+
+.checkout .total-pagamento {
+    font-size: 4rem;
+}
+
+.info-restaurante span {
+    justify-content: center;
+    margin-left: 5rem;
+}
+
+.checkout form {
+    margin-top: 5vh;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 50vw;
+}
+
+.revisao-pedido {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.centraliza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botao-checkout {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ffd900 0, #ffa000 25%, #ff8a0a 50%, #f17418 75%, #e56121 100%);
+    text-decoration: none;
+    color: #11101d;
+}
+
+.botao-checkout:hover {
+    transition: all 0.5s ease;
+    animation: reverse 2s;
+    transform: scale(1.05);
+}
+
+
+/*TELA DE PERSONALIZAÇÃO*/
+
+.div-personaliza {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.div-personaliza .campo {
+    margin-top: 5vh;
+}
+
+
+/*TESTE*/
+
+.pedidos-containter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pedidos-list {
+    min-width: 30vw;
+    list-style: none;
+    margin-right: 8em;
+}
+
+.alimento-item {
+    padding: 0rem 0.5rem;
+}
+
+.alimento {
+    margin: 0.2rem;
+    background: #ffeb7c;
+    color: black;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.trash-btn {
+    background: rgb(243, 110, 49);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+.campo-pedido {
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 200px;
+    max-width: 315px;
+    /*margin-left: 32px;*/
+}
+
+.excluirPedido {
+    font-size: 1.5rem;
+    position: relative;
+    align-self: flex-end;
+    color: #5C9691;
+}
+
+#popupPedido,
+#popupCompra {
+    background-color: blanchedalmond;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 50vw;
+    max-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#close {
+    font-size: 1.5rem;
+    position: relative;
+    align-self: flex-end;
+    color: #5C9691;
+}
+
+#close:hover {
+    transition: all 0.5s ease;
+    animation: reverse 2s;
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/*TESTE*/
+
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+    }
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+    main.cards section.card button {
+        font-size: 70%;
+    }
+}
